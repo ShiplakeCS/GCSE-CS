@@ -1,0 +1,28 @@
+Original instructions:
+https://hackaday.io/project/10338/instructions
+
+And update that line :
+INTERFACES="wlan1"
+
+after this, take down and bring up wlan1 before attempting to restart the dhcp server
+
+after unzipping ./hostapd.conf.gz need to edit hostapd.conf
+
+
+
+Help with re-building hostapd:
+http://hackingadventures42.blogspot.co.uk/2015/02/raspberry-pi-as-wifi-mitm-accesspoint.html
+
+Link to Realtek drivers:
+https://ftp.csl-computer.com/pub/drivers/network/25618-NET_WLAN_USB20_Stick_300Mbps_Mini_CSL_V4/
+
+Setting up a RaspberryPi AP
+http://willhaley.com/blog/raspberry-pi-hotspot-ew7811un-rtl8188cus/
+
+Alternative guide for anonymous browsing via a RPi AP
+http://www.techradar.com/how-to/computing/how-to-use-a-raspberry-pi-to-browse-anonymously-1305789/3
+
+Setting up a MITM device with a Raspberry Pi
+http://jeffq.com/blog/setting-up-a-man-in-the-middle-device-with-raspberry-pi-part-1/#comment-277398
+
+
