@@ -126,9 +126,10 @@ def load_pupil_details(pl):
     :return: None
     """
     # Warn users that they will lose their existing data if they load new data.
-    print("+----------------------------------------------------------------------------------+")
-    print("| Caution! Loading pupil details will overwrite any existing data in the database! |")
-    print("+----------------------------------------------------------------------------------+")
+    print("+------------------------------------------------------------+")
+    print("| Caution! Loading pupil details will overwrite any existing |")
+    print("| data in the database!                                      |")
+    print("+------------------------------------------------------------+")
 
     # Ask the user to confirm that they wish to continue loading data. A while loop is used so that they keep being
     # asked if they don't enter 'y' or 'n' at the prompt. The .lower() string method is used to convert whatever is
