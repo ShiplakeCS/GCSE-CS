@@ -178,7 +178,9 @@ def roll_die():
     else:
         name = p2_name
 
-    print("{0} rolled a {1}! {2}".format(name, value, action_message))
+    set_colour("BLUE")
+    print("\n{0} rolled a {1}! {2}\n".format(name, value, action_message))
+    set_colour("RESET")
 
     return value
 
@@ -280,7 +282,9 @@ def move_piece(die):
     piece_to_move = input("Which piece would you like to move (A/B): ").upper()
 
     if piece_to_move not in ["A", "B"]:
+        set_colour("RED")
         print("\nYou must enter either A or B to select your piece!")
+        set_colour("RESET")
         input("\nPress Enter to continue...")
         move_piece(die)
 
@@ -358,8 +362,10 @@ def move_piece(die):
                         p2_c2 = 1
 
     else:
-        print("You cannot move that piece, you must select your other piece instead!")
-        input("Press Enter to try again...")
+        set_colour("RED")
+        print("\nYou cannot move that piece, you must select your other piece instead!")
+        set_colour("RESET")
+        input("\nPress Enter to try again...")
         move_piece(die)
 
 
@@ -404,7 +410,7 @@ def play_game():
                 game_won = True
                 show_board()
                 set_colour("YELLOW")
-                print("*** {0} wins! Congratulations! ***".format(current_player_name))
+                print("\n*** {0} wins! Congratulations! ***".format(current_player_name))
                 set_colour("RESET")
                 input("\nPress Enter to return to the Main Menu...")
 
