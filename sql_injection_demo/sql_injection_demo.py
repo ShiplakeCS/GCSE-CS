@@ -3,7 +3,7 @@ import sqlite3
 
 app = Flask(__name__)
 
-DATABASE = 'sql_injection_demo.db'
+DATABASE = os.path.join(app.root_path,'sql_injection_demo.db')  # Ensure DB within app root is being used, otherwise SQLite will create a new, empty DB
 
 app.config['DATABASE'] = DATABASE
 app.config['SECRET_KEY'] = "12398yqwleknjs e8yw e;oqi2elkasjo;lal/bl iufgqh2o;w49toi;   j1;q3.a,wsnm.szzd"
