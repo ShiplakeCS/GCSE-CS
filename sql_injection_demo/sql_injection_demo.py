@@ -1,9 +1,12 @@
 from flask import Flask, g, request, render_template, session, redirect, url_for
 import sqlite3
+import os
 
 app = Flask(__name__)
 
-DATABASE = 'sql_injection_demo.db'
+DATABASE = os.path.join(app.root_path,'sql_injection_demo.db')  # Ensure DB within app root is being used, otherwise SQLite will create a new, empty DB
+
+
 
 app.config['DATABASE'] = DATABASE
 app.config['SECRET_KEY'] = "12398yqwleknjs e8yw e;oqi2elkasjo;lal/bl iufgqh2o;w49toi;   j1;q3.a,wsnm.szzd"
@@ -26,10 +29,12 @@ def login():
 
     if request.method == "POST":
         # do login
+        db = get_db()
+        cur = db.cursor()
 
-        sql = 'SELECT * FROM "user" where username="{}" and password="{}"'.format(request.form['username'], request.form['password'])
+        sql = "SELECT * FROM user where username='{}' and password='{}'".format(request.form['username'], request.form['password'])
         print("SQL query processed: {}".format(sql))
-        result = get_db().execute(sql).fetchone()
+        result = cur.execute(sql).fetchone()
 
         if result:
             session['activeUser'] = result['username']
