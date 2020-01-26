@@ -1,1 +1,0 @@
-SELECT * FROM "user" where username="" or 1=1 --and password = ""
